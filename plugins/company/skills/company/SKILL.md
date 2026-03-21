@@ -171,6 +171,7 @@ Notion、Google Calendar、GitHub、Slack など外部連携の相談。
 - MCP が設定済みなら活用する
 - 未設定なら実行せず、設定コマンドだけを案内する
 - MCP の有無に関係なく、必要ならローカル TODO やメモも更新する
+- Google カレンダー・タスク連携の相談には `references/google-integration.md` を参照して案内する
 
 ### `todo`
 
