@@ -31,7 +31,7 @@ You: I want to build a SaaS and reach $1K/month. Task management is a mess.
 ### 3. Done!
 
 ```
-→ .company/secretary/ is automatically generated
+→ .company/secretary/ and .company/state.json are automatically generated
 
 Secretary: The secretary's office is all set up!
            From now on, just run /company to talk to me anytime.
@@ -42,6 +42,7 @@ That's it. The following folders are created:
 ```
 .company/
 ├── CLAUDE.md              ← Organization rules
+├── state.json             ← Departments and proposal state
 └── secretary/
     ├── CLAUDE.md           ← Secretary behavior rules
     ├── inbox/              ← Quick capture
@@ -49,6 +50,8 @@ That's it. The following folders are created:
     │   └── 2026-03-19.md   ← Today's TODOs
     └── notes/              ← Brainstorming & consultation notes
 ```
+
+In v3, the secretary classifies each request by intent first. If a request is unclear, it is safely held in `secretary/inbox/YYYY-MM-DD.md` instead of being forced into the wrong place.
 
 ## Next Steps
 

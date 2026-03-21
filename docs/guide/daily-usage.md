@@ -45,6 +45,28 @@ TODOは `secretary/todos/YYYY-MM-DD.md` に保存されます。
 
 思いつきやアイデアは `secretary/inbox/` にキャプチャされます。
 
+## 判断に迷う依頼
+
+```
+> この件、どこに入れるのがいいかまだ分からない
+秘書: いったん inbox に入れておきますね。
+      後で整理しやすいように要点も添えておきます。
+  → secretary/inbox/2026-03-21.md に記録
+```
+
+v3 では、秘書が迷った内容を無理に `notes/` や既存部署へ振り分けません。まず `inbox` に保留するのが標準動作です。
+
+## 部署がまだない仕事
+
+```
+> 競合サービスを3社調べて比較して
+秘書: リサーチ系の依頼ですね。
+      まだリサーチ部門がないので、まずは inbox に整理しておきます。
+      必要ならリサーチ部門も提案しますね。
+```
+
+専門作業なのに対象部署が未作成なら、秘書は `secretary/inbox/YYYY-MM-DD.md` に依頼要約を保存し、`.company/state.json` の提案カウンタを更新します。
+
 ## ダッシュボード
 
 ```
@@ -71,3 +93,10 @@ TODOは `secretary/todos/YYYY-MM-DD.md` に保存されます。
 | 意思決定 | `secretary/notes/YYYY-MM-DD-decisions.md` |
 | 学び・気づき | `secretary/notes/YYYY-MM-DD-learnings.md` |
 | アイデア | `secretary/inbox/YYYY-MM-DD.md` |
+
+## 保存ルールの優先順位
+
+- TODOや日次メモは `YYYY-MM-DD.md` に追記
+- 壁打ちや相談の結論は `notes/<topic>.md` に保存
+- 専門作業で部署がまだなければ `inbox` に保留
+- 分類不能な内容も `inbox` を優先

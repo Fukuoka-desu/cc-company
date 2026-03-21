@@ -45,6 +45,27 @@ Secretary: Noted!
 
 Ideas and quick thoughts are captured in `secretary/inbox/`.
 
+## Requests the Secretary Is Unsure About
+
+```
+> I'm not sure where this belongs yet
+Secretary: I'll hold it in inbox for now and keep the key context with it.
+  → Recorded in secretary/inbox/2026-03-21.md
+```
+
+In v3, the secretary does not force unclear requests into `notes/` or an arbitrary department. `inbox` is the default safe fallback.
+
+## Work for a Department That Doesn't Exist Yet
+
+```
+> Compare three competitors for me
+Secretary: This looks like research work.
+           Since there is no Research department yet, I'll organize it in inbox first
+           and suggest a department if this keeps coming up.
+```
+
+If a specialized request arrives before the matching department exists, the secretary stores a summary in `secretary/inbox/YYYY-MM-DD.md` and updates the proposal counters in `.company/state.json`.
+
 ## Dashboard
 
 ```
@@ -71,3 +92,10 @@ The secretary automatically records the following without being asked:
 | Decisions | `secretary/notes/YYYY-MM-DD-decisions.md` |
 | Learnings | `secretary/notes/YYYY-MM-DD-learnings.md` |
 | Ideas | `secretary/inbox/YYYY-MM-DD.md` |
+
+## Save Priority
+
+- Daily tasks and captures append to `YYYY-MM-DD.md`
+- Brainstorming conclusions go to `notes/<topic>.md`
+- Specialized work without a department stays in `inbox`
+- Uncategorized input also falls back to `inbox`

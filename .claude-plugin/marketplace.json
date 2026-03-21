@@ -4,14 +4,14 @@
     "name": "Shin-sibainu"
   },
   "metadata": {
-    "description": "秘書から始める仮想組織プラグイン。3ステップで即運用開始。"
+    "description": "秘書が入力を安定して整理・振り分ける仮想組織プラグイン。迷ったら inbox に保留。"
   },
   "plugins": [
     {
       "name": "company",
       "source": "./plugins/company",
-      "description": "秘書から始める仮想組織スキル。3ステップで即運用開始、部署は必要に応じて自然に増える。",
-      "version": "2.0.0",
+      "description": "秘書が入力を安定ルーティングする仮想組織スキル。迷ったら inbox に保留し、必要に応じて部署を提案する。",
+      "version": "3.0.0",
       "author": {
         "name": "Shin-sibainu"
       },

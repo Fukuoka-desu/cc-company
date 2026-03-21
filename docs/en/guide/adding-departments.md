@@ -1,22 +1,23 @@
 # Adding Departments
 
-This is the core feature of cc-company. As you use it, the secretary suggests adding departments.
+This is a core feature of cc-company. In v3, department suggestions are grounded in `.company/state.json` instead of pure conversation memory.
 
 ## Suggestions from the Secretary
 
-When tasks in the same area are repeated, the secretary suggests a new department.
+When specialized work in the same area repeats, the secretary suggests a new department.
 
 ```
 > Research competitors for me
-Secretary: Sure, I'll look into it.
-  → Saved to secretary/notes/2026-03-19-competitor-research.md
+Secretary: I'll organize this as a research request in inbox first.
+  → Saved to secretary/inbox/2026-03-21.md
 
-(A few days later...)
+(After a similar request happens again...)
 
 > I'd also like to know about overseas trends
-Secretary: Research requests are increasing.
-           Shall I create a Research department?
-           It can systematically manage research results in a dedicated folder.
+Secretary: Research requests are piling up.
+           `.company/state.json` has reached the proposal threshold,
+           so a Research department would let us organize this in topics/.
+           Shall I create it?
 
 You: Yes, create it
 
@@ -24,7 +25,7 @@ You: Yes, create it
 ```
 
 ::: tip Note
-If a department doesn't exist yet, the secretary saves results in `secretary/notes/`. Once a department is created, it gets its own dedicated management.
+If a department does not exist yet, the secretary first stores the request summary in `secretary/inbox/`. v3 avoids forcing work into the wrong place just to look smart.
 :::
 
 ## Direct Requests
@@ -38,6 +39,8 @@ Secretary: Creating a PM department now!
 → pm/ is automatically generated
 ```
 
+If you explicitly ask to create a department, the secretary does not wait for the proposal counter.
+
 ## What Gets Created
 
 When a department is added, the following are auto-generated:
@@ -46,6 +49,7 @@ When a department is added, the following are auto-generated:
 - **Department CLAUDE.md** — Rules and behavior for that department
 - **Subfolders** — For file management
 - **Templates** — For creating new files
+- **state.json update** — Department list and proposal state
 
 For example, adding a Research department:
 

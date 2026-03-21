@@ -5,7 +5,7 @@ export default defineConfig({
   base: "/cc-company/",
   cleanUrls: true,
 
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: "/hero-image.png" }]],
 
   locales: {
     root: {
@@ -41,7 +41,7 @@ export default defineConfig({
                 { text: "部署を追加する", link: "/guide/adding-departments" },
                 { text: "MCP連携ガイド", link: "/guide/mcp-integration" },
                 {
-                  text: "v1 からのアップグレード",
+                  text: "v3 への移行",
                   link: "/guide/migration",
                 },
               ],
@@ -137,7 +137,7 @@ export default defineConfig({
                   link: "/en/guide/mcp-integration",
                 },
                 {
-                  text: "Upgrading from v1",
+                  text: "Migrating to v3",
                   link: "/en/guide/migration",
                 },
               ],

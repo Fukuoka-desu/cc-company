@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "departments": ["secretary"],
+  "routing_hints": {
+    "pm": 0,
+    "research": 0,
+    "marketing": 0,
+    "engineering": 0,
+    "finance": 0,
+    "sales": 0,
+    "creative": 0,
+    "hr": 0
+  },
+  "last_active_date": "{{CREATED_DATE}}",
+  "pending_proposals": []
+}

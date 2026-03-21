@@ -31,7 +31,7 @@ Claude Code で以下を実行します。
 ### 3. 完了！
 
 ```
-→ .company/secretary/ が自動生成される
+→ .company/secretary/ と .company/state.json が自動生成される
 
 秘書: 秘書室のセットアップが完了しました！
       これからは /company でいつでも話しかけてください。
@@ -42,6 +42,7 @@ Claude Code で以下を実行します。
 ```
 .company/
 ├── CLAUDE.md              ← 組織ルール
+├── state.json             ← 部署一覧と提案状態
 └── secretary/
     ├── CLAUDE.md           ← 秘書の振る舞い
     ├── inbox/              ← クイックキャプチャ
@@ -49,6 +50,8 @@ Claude Code で以下を実行します。
     │   └── 2026-03-16.md   ← 今日のTODO
     └── notes/              ← 壁打ち・相談メモ
 ```
+
+v3 では、秘書は入力を intent ごとに分類して処理します。判断に迷う内容は `secretary/inbox/YYYY-MM-DD.md` にいったん保留されるので、初期構成でも運用がぶれにくくなります。
 
 ## 次のステップ
 

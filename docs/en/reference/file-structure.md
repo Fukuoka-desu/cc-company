@@ -18,7 +18,8 @@ cc-company/
 │               ├── SKILL.md    ← Skill definition (entire workflow)
 │               └── references/
 │                   ├── departments.md         ← Department templates
-│                   └── claude-md-template.md  ← CLAUDE.md generation template
+│                   ├── claude-md-template.md  ← CLAUDE.md generation template
+│                   └── state-template.json    ← state.json template
 ├── docs/                       ← This documentation (VitePress)
 ├── package.json
 ├── README.md
@@ -34,6 +35,7 @@ The `.company/` folder created after running `/company`.
 ```
 .company/
 ├── CLAUDE.md              ← Organization rules & owner info
+├── state.json             ← Departments, proposal state, routing hints
 └── secretary/
     ├── CLAUDE.md           ← Secretary behavior rules
     ├── inbox/              ← Quick capture
@@ -77,9 +79,35 @@ The `.company/` folder created after running `/company`.
 - [x] Completed task | Done: YYYY-MM-DD
 ```
 
+## state.json
+
+```json
+{
+  "version": 3,
+  "departments": ["secretary"],
+  "routing_hints": {
+    "pm": 0,
+    "research": 0,
+    "marketing": 0,
+    "engineering": 0,
+    "finance": 0,
+    "sales": 0,
+    "creative": 0,
+    "hr": 0
+  },
+  "last_active_date": "YYYY-MM-DD",
+  "pending_proposals": []
+}
+```
+
+- `departments`: currently active departments
+- `routing_hints`: how many repeated requests each area has seen
+- `pending_proposals`: departments or follow-ups waiting for a decision
+
 ## Operational Rules
 
-- **One file per day**: If a file for the same date exists, append to it
+- **One file per day**: Daily files for todos, inbox, decisions, and learnings append by date
+- **One file per topic**: Notes and department files append to the existing topic file when possible
 - **Date check**: Always verify today's date before file operations
 - **No overwriting**: Existing files are append-only
 - **When in doubt, inbox**: If unsure where to categorize, put it in `secretary/inbox/`
